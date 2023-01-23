@@ -8,9 +8,8 @@ import { history, Link } from '@umijs/max';
 import defaultSettings from '../config/defaultSettings';
 import { errorConfig } from './requestErrorConfig';
 import { currentUser as queryCurrentUser } from './services/ant-design-pro/api';
-import React from 'react';
 const isDev = process.env.NODE_ENV === 'development';
-const loginPath = '/user/login';
+const loginPath = '/api/user/login'; // Changed by pmq20/ant-design-rails
 
 /**
  * @see  https://umijs.org/zh-CN/plugins/plugin-initial-state
@@ -53,7 +52,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
   return {
     rightContentRender: () => <RightContent />,
     waterMarkProps: {
-      content: initialState?.currentUser?.name,
+      // content: initialState?.currentUser?.name, // Changed by pmq20/ant-design-rails
     },
     footerRender: () => <Footer />,
     onPageChange: () => {
@@ -61,6 +60,9 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
       // 如果没有登录，重定向到 login
       if (!initialState?.currentUser && location.pathname !== loginPath) {
         history.push(loginPath);
+      }
+      if (window.ant_design_rails && location.pathname + location.search !== window.ant_design_rails.request_fullpath) {
+        window.location.reload();
       }
     },
     layoutBgImgList: [

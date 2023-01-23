@@ -9,8 +9,8 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# Use postgresql as the database for Active Record
+gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -51,6 +51,17 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+
+  gem 'pry', '>= 0.14.2'
+  gem 'rubocop', '>= 1.44.0', require: false
+  gem 'rubocop-performance', '>= 1.15.2', require: false
+  gem 'rubocop-rails', '>= 2.17.4', require: false
+  gem 'rubocop-thread_safety', '>= 0.4.4', require: false
+  gem 'capistrano', '~> 3.17', require: false
+  gem 'capistrano-bundler', '~> 2.1', require: false
+  gem 'capistrano-rails', '~> 1.6', '>= 1.6.2', require: false
+  gem 'capistrano-rvm', '~> 0.1.2', require: false
+  gem 'capistrano3-puma', '~> 5.2', require: false
 end
 
 group :development do
@@ -70,3 +81,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem 'ed25519', '~> 1.3'
+gem 'bcrypt_pbkdf', '~> 1.1'
+gem 'honeybadger', '~> 5.0', '>= 5.0.2'
+gem 'kaminari', '~> 1.2', '>= 1.2.2'

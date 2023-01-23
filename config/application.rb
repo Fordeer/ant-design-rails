@@ -6,6 +6,9 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+UMI_DEPLOYMENT_CSS = File.basename(Dir[File.expand_path("../public/umi.*.css", __dir__)].first.to_s)
+UMI_DEPLOYMENT_JS = File.basename(Dir[File.expand_path("../public/umi.*.js", __dir__)].first.to_s)
+
 module AntDesignRails
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.

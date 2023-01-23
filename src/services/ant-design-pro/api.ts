@@ -16,6 +16,9 @@ export async function currentUser(options?: { [key: string]: any }) {
 export async function outLogin(options?: { [key: string]: any }) {
   return request<Record<string, any>>('/api/login/outLogin', {
     method: 'POST',
+    headers: {
+      'X-CSRF-Token': window.document.querySelector("meta[name='csrf-token']").getAttribute('content'),
+    },
     ...(options || {}),
   });
 }
@@ -25,6 +28,7 @@ export async function login(body: API.LoginParams, options?: { [key: string]: an
   return request<API.LoginResult>('/api/login/account', {
     method: 'POST',
     headers: {
+      'X-CSRF-Token': window.document.querySelector("meta[name='csrf-token']").getAttribute('content'),
       'Content-Type': 'application/json',
     },
     data: body,
@@ -64,6 +68,9 @@ export async function rule(
 export async function updateRule(options?: { [key: string]: any }) {
   return request<API.RuleListItem>('/api/rule', {
     method: 'PUT',
+    headers: {
+      'X-CSRF-Token': window.document.querySelector("meta[name='csrf-token']").getAttribute('content'),
+    },
     ...(options || {}),
   });
 }
@@ -72,6 +79,9 @@ export async function updateRule(options?: { [key: string]: any }) {
 export async function addRule(options?: { [key: string]: any }) {
   return request<API.RuleListItem>('/api/rule', {
     method: 'POST',
+    headers: {
+      'X-CSRF-Token': window.document.querySelector("meta[name='csrf-token']").getAttribute('content'),
+    },
     ...(options || {}),
   });
 }
@@ -80,6 +90,9 @@ export async function addRule(options?: { [key: string]: any }) {
 export async function removeRule(options?: { [key: string]: any }) {
   return request<Record<string, any>>('/api/rule', {
     method: 'DELETE',
+    headers: {
+      'X-CSRF-Token': window.document.querySelector("meta[name='csrf-token']").getAttribute('content'),
+    },
     ...(options || {}),
   });
 }

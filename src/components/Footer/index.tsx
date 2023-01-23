@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
       style={{
         background: 'none',
       }}
-      copyright={`${currentYear} ${defaultMessage}`}
+      copyright={false} // Changed by pmq20/ant-design-rails
       links={[
         {
           key: 'Ant Design Pro',
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
         {
           key: 'github',
           title: <GithubOutlined />,
-          href: 'https://github.com/ant-design/ant-design-pro',
+          href: 'https://github.com/pmq20/ant-design-rails',
           blankTarget: true,
         },
         {

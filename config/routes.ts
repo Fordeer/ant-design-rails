@@ -12,34 +12,34 @@
  */
 export default [
   {
-    path: '/user',
+    path: '/api/user',
     layout: false,
     routes: [
       {
         name: 'login',
-        path: '/user/login',
+        path: '/api/user/login',
         component: './User/Login',
       },
     ],
   },
   {
-    path: '/welcome',
+    path: '/api/welcome',
     name: 'welcome',
     icon: 'smile',
     component: './Welcome',
   },
   {
-    path: '/admin',
+    path: '/api/admin',
     name: 'admin',
     icon: 'crown',
     access: 'canAdmin',
     routes: [
       {
-        path: '/admin',
-        redirect: '/admin/sub-page',
+        path: '/api/admin',
+        redirect: '/api/admin/sub-page',
       },
       {
-        path: '/admin/sub-page',
+        path: '/api/admin/sub-page',
         name: 'sub-page',
         component: './Admin',
       },
@@ -48,12 +48,12 @@ export default [
   {
     name: 'list.table-list',
     icon: 'table',
-    path: '/list',
+    path: '/api/list',
     component: './TableList',
   },
   {
     path: '/',
-    redirect: '/welcome',
+    redirect: '/api/welcome',
   },
   {
     path: '*',

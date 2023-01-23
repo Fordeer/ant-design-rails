@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>AntDesignRails</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Ant Design on Rails</title>
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+<script>
+window.ant_design_rails = <%=raw @ant_design_rails.to_json %>;
+</script>
+<% unless Rails.env.development? %><link rel="stylesheet" href="/<%= UMI_DEPLOYMENT_CSS %>"><% end %>
+<script async="" src="/scripts/loading.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+</head>
+<body>
+<a class="github-fork-ribbon" href="https://github.com/pmq20/ant-design-rails" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+<%= yield %>
+<div id="root"></div>
+<% if Rails.env.development? %>
+<script src="/umi.js"></script>
+<% else %>
+<script src="/<%= UMI_DEPLOYMENT_JS %>"></script>
+<% end %>
+</body>
 </html>
