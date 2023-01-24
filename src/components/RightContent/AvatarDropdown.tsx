@@ -2,7 +2,7 @@ import { outLogin } from '@/services/ant-design-pro/api';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { setAlpha } from '@ant-design/pro-components';
 import { useEmotionCss } from '@ant-design/use-emotion-css';
-import { history, useModel } from '@umijs/max';
+import { history, useModel, useIntl } from '@umijs/max';
 import { Avatar, Spin } from 'antd';
 import { stringify } from 'querystring';
 import type { MenuInfo } from 'rc-menu/lib/interface';
@@ -53,8 +53,8 @@ const AvatarLogo = () => {
 
   return <Avatar size="small" className={avatarClassName} src={currentUser?.avatar} alt="avatar" />;
 };
-
 const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
+  const intl = useIntl();
   /**
    * 退出登录，并且将当前的 url 保存
    */
@@ -66,9 +66,9 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
     const redirect = urlParams.get('redirect');
     // Note: There may be security issues, please note
     if (window.location.pathname !== '/api/user/login' && !redirect) {
-      // Changed by pmq20/ant-design-rails
+      // Changes of pmq20/ant-design-rails
       history.replace({
-        pathname: '/api/user/login', // Changed by pmq20/ant-design-rails
+        pathname: '/api/user/login', // Changes of pmq20/ant-design-rails
         search: stringify({
           redirect: pathname + search,
         }),
@@ -150,7 +150,10 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
     {
       key: 'logout',
       icon: <LogoutOutlined />,
-      label: '退出登录',
+      label: intl.formatMessage({
+        id: 'menu.account.logout',
+        defaultMessage: '退出登录',
+      }),
     },
   ];
 

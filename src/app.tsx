@@ -7,9 +7,9 @@ import type { RunTimeLayoutConfig } from '@umijs/max';
 import { history, Link } from '@umijs/max';
 import defaultSettings from '../config/defaultSettings';
 import { errorConfig } from './requestErrorConfig';
-import { currentUser as queryCurrentUser } from './services/ant-design-pro/api';
+import { currentUser as queryCurrentUser, getRailsPage } from './services/ant-design-pro/api'; // Changes of pmq20/ant-design-rails
 const isDev = process.env.NODE_ENV === 'development';
-const loginPath = '/api/user/login'; // Changed by pmq20/ant-design-rails
+const loginPath = '/api/user/login'; // Changes of pmq20/ant-design-rails
 
 /**
  * @see  https://umijs.org/zh-CN/plugins/plugin-initial-state
@@ -19,6 +19,7 @@ export async function getInitialState(): Promise<{
   currentUser?: API.CurrentUser;
   loading?: boolean;
   fetchUserInfo?: () => Promise<API.CurrentUser | undefined>;
+  antd: any; // Changes of pmq20/ant-design-rails
 }> {
   const fetchUserInfo = async () => {
     try {
@@ -39,11 +40,13 @@ export async function getInitialState(): Promise<{
       fetchUserInfo,
       currentUser,
       settings: defaultSettings as Partial<LayoutSettings>,
+      antd: window.antd, // Changes of pmq20/ant-design-rails
     };
   }
   return {
     fetchUserInfo,
     settings: defaultSettings as Partial<LayoutSettings>,
+    antd: window.antd, // Changes of pmq20/ant-design-rails
   };
 }
 
@@ -52,17 +55,31 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
   return {
     rightContentRender: () => <RightContent />,
     waterMarkProps: {
-      // content: initialState?.currentUser?.name, // Changed by pmq20/ant-design-rails
+      // content: initialState?.currentUser?.name, // Changes of pmq20/ant-design-rails
     },
     footerRender: () => <Footer />,
-    onPageChange: () => {
+    onPageChange: async () => {
       const { location } = history;
       // 如果没有登录，重定向到 login
       if (!initialState?.currentUser && location.pathname !== loginPath) {
         history.push(loginPath);
       }
-      if (window.ant_design_rails && location.pathname + location.search !== window.ant_design_rails.request_fullpath) {
-        window.location.reload();
+      /** Changes of pmq20/ant-design-rails */
+      const proposed_fullpath = location.pathname + location.search;
+      if (initialState?.antd && proposed_fullpath !== initialState?.antd.request_fullpath) {
+        try {
+          const backend_json = await getRailsPage(proposed_fullpath);
+          if (proposed_fullpath !== backend_json.request_fullpath) {
+            throw "Location still mismatches after getting a Rails page";
+          }
+          setInitialState((preInitialState) => ({
+            ...preInitialState,
+            antd: backend_json,
+          }));
+        } catch (error) {
+          console.log(error);
+          window.location.reload();
+        }
       }
     },
     layoutBgImgList: [

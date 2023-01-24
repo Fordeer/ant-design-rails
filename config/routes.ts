@@ -25,7 +25,7 @@ export default [
   {
     path: '/api/welcome',
     name: 'welcome',
-    icon: 'smile',
+    icon: 'home',
     component: './Welcome',
   },
   {

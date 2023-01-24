@@ -2,6 +2,17 @@
 /* eslint-disable */
 import { request } from '@umijs/max';
 
+/** Changes of pmq20/ant-design-rails */
+export async function getRailsPage(full_path: string, options?: { [key: string]: any }) {
+  return request(full_path, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+    },
+    ...(options || {}),
+  });
+}
+
 /** 获取当前的用户 GET /api/currentUser */
 export async function currentUser(options?: { [key: string]: any }) {
   return request<{
