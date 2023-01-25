@@ -53,6 +53,8 @@ Handle both frontend and backend deployment in a single command:
 bundle exec cap production deploy
 ```
 
+Then access your production server. See https://ant-design-rails.minqi-pan.com/ for an example deployment.
+
 ## Contributing
 
 All contributions are welcome and greatly appreciated! 🙇
