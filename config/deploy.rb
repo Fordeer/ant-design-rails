@@ -1,10 +1,12 @@
-require File.expand_path("./environment", __dir__)
+# frozen_string_literal: true
+
+require File.expand_path('./environment', __dir__)
 
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.17.1"
+lock '~> 3.17.1'
 
-set :application, "AntDesignRails"
-set :repo_url, "https://github.com/pmq20/ant-design-rails.git"
+set :application, 'AntDesignRails'
+set :repo_url, 'https://github.com/pmq20/ant-design-rails.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -28,7 +30,7 @@ append :linked_files, 'config/master.key'
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "tmp/webpacker", "public/system", "vendor", "storage"
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "tmp/webpacker", "public/system", "storage"
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'tmp/webpacker', 'public/system', 'storage'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }

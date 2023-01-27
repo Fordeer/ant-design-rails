@@ -66,15 +66,15 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
       }
       /** Changes of pmq20/ant-design-rails */
       const proposed_fullpath = location.pathname + location.search;
-      if (initialState?.antd && proposed_fullpath !== initialState?.antd.request_fullpath) {
+      if (initialState?.antd && proposed_fullpath !== initialState?.antd.requestFullpath) {
         try {
-          const backend_json = await getRailsPage(proposed_fullpath);
-          if (proposed_fullpath !== backend_json.request_fullpath) {
+          const backendPage = await getRailsPage(proposed_fullpath);
+          if (proposed_fullpath !== backendPage.requestFullpath) {
             throw "Location still mismatches after getting a Rails page";
           }
           setInitialState((preInitialState) => ({
             ...preInitialState,
-            antd: backend_json,
+            antd: backendPage,
           }));
         } catch (error) {
           console.log(error);

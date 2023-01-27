@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   before_action do
     @antd ||= {
-      request_fullpath: request.fullpath,
-    }
+      request_fullpath: request.fullpath
+    }.freeze
   end
-  
+
   def render_ui
     respond_to do |format|
       format.html { render html: '', layout: true }

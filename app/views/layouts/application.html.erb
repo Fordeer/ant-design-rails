@@ -8,7 +8,7 @@
 <%= csrf_meta_tags %>
 <%= csp_meta_tag %>
 <script>
-window.antd = <%=raw @antd.to_json %>;
+window.antd = <%=raw @antd.deep_transform_keys { |k| k.to_s.camelize(:lower) }.to_json %>;
 </script>
 <% unless Rails.env.development? %><link rel="stylesheet" href="/<%= UMI_DEPLOYMENT_CSS %>"><% end %>
 <script async="" src="/scripts/loading.js"></script>

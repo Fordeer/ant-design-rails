@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 task :build_ant_design do
   on roles(:app) do
     within release_path do

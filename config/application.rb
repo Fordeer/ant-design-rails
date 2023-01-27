@@ -1,13 +1,15 @@
-require_relative "boot"
+# frozen_string_literal: true
 
-require "rails/all"
+require_relative 'boot'
+
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-UMI_DEPLOYMENT_CSS = File.basename(Dir[File.expand_path("../public/umi.*.css", __dir__)].first.to_s)
-UMI_DEPLOYMENT_JS = File.basename(Dir[File.expand_path("../public/umi.*.js", __dir__)].first.to_s)
+UMI_DEPLOYMENT_CSS = File.basename(Dir[File.expand_path('../public/umi.*.css', __dir__)].first.to_s)
+UMI_DEPLOYMENT_JS = File.basename(Dir[File.expand_path('../public/umi.*.js', __dir__)].first.to_s)
 
 module AntDesignRails
   class Application < Rails::Application

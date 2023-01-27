@@ -46,7 +46,7 @@ export default {
   'pages.searchTable.updateForm.schedulingPeriod.timeRules': 'Please choose a start time!',
   'pages.searchTable.titleDesc': 'Description',
   'pages.searchTable.ruleName': 'Rule name is required',
-  'pages.searchTable.titleCallNo': 'Number of Service Calls',
+  'pages.searchTable.titleCallNo': '# of Service Calls',
   'pages.searchTable.titleStatus': 'Status',
   'pages.searchTable.nameStatus.default': 'default',
   'pages.searchTable.nameStatus.running': 'running',
