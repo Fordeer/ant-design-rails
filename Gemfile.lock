@@ -1,8 +1,9 @@
 PATH
   remote: vendor/ant-design-rails
   specs:
-    ant-design-rails (0.1.0)
+    ant-design-rails (0.2.0)
       execjs (~> 2.8, >= 2.8.1)
+      olive_branch (~> 4.0, >= 4.0.1)
       railties (~> 7.0.4, >= 7.0.4.2)
 
 GEM
@@ -289,7 +290,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  ant-design-rails (= 0.1.0)!
+  ant-design-rails (= 0.2.0)!
   bcrypt_pbkdf (~> 1.1)
   bootsnap
   capistrano (~> 3.17)
@@ -304,7 +305,6 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kaminari (~> 1.2, >= 1.2.2)
-  olive_branch (~> 4.0, >= 4.0.1)
   pg (~> 1.1)
   pry (>= 0.14.2)
   puma (~> 5.0)

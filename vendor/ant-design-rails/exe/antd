@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 $LOAD_PATH.unshift("#{__dir__}/../lib")
-
 require 'ant/design/rails'
-puts Ant::Design::Rails.hi(ARGV[0])
+
+# Todo: placeholder for project generation based on the template of https://github.com/pmq20/ant-design-rails
+puts ::Ant::Design::Rails.hi(ARGV[0])

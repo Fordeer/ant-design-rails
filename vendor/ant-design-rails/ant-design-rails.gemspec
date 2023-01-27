@@ -26,6 +26,7 @@ Gem::Specification.new do |spec|
       (f == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|circleci)|appveyor)})
     end
   end
-  spec.add_dependency "railties", '~> 7.0.4', '>= 7.0.4.2'
-  spec.add_dependency "execjs", '~> 2.8', '>= 2.8.1'
+  spec.add_dependency 'railties', '~> 7.0.4', '>= 7.0.4.2'
+  spec.add_dependency 'execjs', '~> 2.8', '>= 2.8.1'
+  spec.add_dependency 'olive_branch', '~> 4.0', '>= 4.0.1'
 end

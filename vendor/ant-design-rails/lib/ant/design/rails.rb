@@ -2,8 +2,9 @@
 
 require_relative "rails/version"
 require_relative "rails/routes"
+require_relative "rails/railties"
 
-# Todo
+# Todo: placeholder methods for project generation based on the template of https://github.com/pmq20/ant-design-rails
 module Ant
   module Design
     module Rails
@@ -15,4 +16,3 @@ module Ant
     end
   end
 end
-

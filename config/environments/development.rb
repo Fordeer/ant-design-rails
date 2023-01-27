@@ -70,11 +70,4 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
-
-  config.middleware.use UmiDevProxy
-  excluded_routes = ->(env) { !env['PATH_INFO'].match(%r{^/api}) }
-  config.middleware.use OliveBranch::Middleware,
-                        inflection: 'camel',
-                        exclude_params: excluded_routes,
-                        exclude_response: excluded_routes
 end

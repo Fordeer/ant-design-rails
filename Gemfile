@@ -83,9 +83,8 @@ group :test do
   gem 'webdrivers'
 end
 
-gem 'ant-design-rails', '0.1.0', path: 'vendor/ant-design-rails'
+gem 'ant-design-rails', '0.2.0', path: 'vendor/ant-design-rails'
 gem 'bcrypt_pbkdf', '~> 1.1'
 gem 'ed25519', '~> 1.3'
 gem 'honeybadger', '~> 5.0', '>= 5.0.2'
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
-gem 'olive_branch', '~> 4.0', '>= 4.0.1'

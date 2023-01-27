@@ -31,7 +31,7 @@ end
 module ActionDispatch::Routing
   class Mapper
     def antd_pages(routes_ts_path)
-      antd_routes_reader = Ant::Design::Rails::Routes.new(routes_ts_path)
+      antd_routes_reader = ::Ant::Design::Rails::Routes.new(routes_ts_path)
       antd_api = {}
       antd_routes_reader.each do |antd_route|
         next if antd_route["path"] == "*"
