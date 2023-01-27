@@ -1,5 +1,7 @@
 # 🚆 🛤️ Ant Design on Rails
 
+[![Gem Version](https://badge.fury.io/rb/ant-design-rails.svg)](https://badge.fury.io/rb/ant-design-rails)
+
 Pairing world's best backend framework with the best frontend framework, without wrapping everything in API!
 
 - **[Ruby on Rails](https://rubyonrails.org/)**: the web-app framework that includes everything needed to create database-backed web applications.
