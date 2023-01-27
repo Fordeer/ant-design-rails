@@ -62,3 +62,4 @@ All contributions are welcome and greatly appreciated! 🙇
 - Use [Ant Design on Rails](https://github.com/pmq20/ant-design-rails/) in your next project.
 - Submit [issues](https://github.com/pmq20/ant-design-rails/issues) to report bugs.
 - Propose [pull requests](https://github.com/pmq20/ant-design-rails/pulls) to improve the code.
+- Contribute to [Rails](https://github.com/rails/rails) and [Ant Design Pro](https://github.com/ant-design/ant-design-pro/)
