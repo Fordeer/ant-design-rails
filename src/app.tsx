@@ -65,20 +65,22 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
         history.push(loginPath);
       }
       /** Changes of pmq20/ant-design-rails */
-      const proposed_fullpath = location.pathname + location.search;
-      if (initialState?.antd && proposed_fullpath !== initialState?.antd.requestFullpath) {
-        try {
-          const backendPage = await getRailsPage(proposed_fullpath);
-          if (proposed_fullpath !== backendPage.requestFullpath) {
-            throw "Location still mismatches after getting a Rails page";
+      if (typeof initialState?.antd?.requestFullpath === "string") {
+        const proposed_fullpath = location.pathname + location.search;
+        if (proposed_fullpath !== initialState.antd.requestFullpath) {
+          try {
+            const backendPage = await getRailsPage(proposed_fullpath);
+            if (proposed_fullpath !== backendPage.requestFullpath) {
+              throw "Location still mismatches after getting a Rails page";
+            }
+            setInitialState((preInitialState) => ({
+              ...preInitialState,
+              antd: backendPage,
+            }));
+          } catch (error) {
+            console.log(error);
+            window.location.reload();
           }
-          setInitialState((preInitialState) => ({
-            ...preInitialState,
-            antd: backendPage,
-          }));
-        } catch (error) {
-          console.log(error);
-          window.location.reload();
         }
       }
     },

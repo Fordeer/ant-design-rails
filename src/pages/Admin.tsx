@@ -29,7 +29,7 @@ const Admin: React.FC = () => {
           }}
         />
         <Typography.Title level={2} style={{ textAlign: 'center' }}>
-          <SmileTwoTone /> {initialState?.antd.greetings}
+          <SmileTwoTone /> {initialState?.antd?.greetings}
         </Typography.Title>
       </Card>
       <p style={{ textAlign: 'center', marginTop: 24 }}>
