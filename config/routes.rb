@@ -2,14 +2,16 @@
 Rails.application.routes.draw do
   root to: redirect('/api/welcome')
   scope :api do
-    get 'user/login' => 'auth#login'
-    get 'currentUser' => 'auth#current'
-    post 'login/account' => 'auth#account'
-    post 'login/outLogin' => 'auth#out'
+    get 'user/login' => 'user#login'
 
-    get 'welcome' => 'welcome#index'
+    post 'login/account' => 'login#account'
+    post 'login/outLogin' => 'login#out_login'
+
+    get 'welcome' => 'welcome#welcome'
+    get 'currentUser' => 'welcome#current_user'
+    get 'list' => 'welcome#list'
+    get 'rule' => 'welcome#rule'
+
     get 'admin/sub-page' => 'admin#index'
-    get 'list' => 'list#index'
-    get 'rule' => 'list#rule'
   end
 end
