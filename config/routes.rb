@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   antd_pages Rails.root.join('config', 'routes.ts')
 
   # Part 2: API routes (GET, POST, PUT, DELETE)
-  # The rest are real API routes that are Fetch/XHR-ed by the frontend or other API consumers
+  # The rest are real API routes that are Fetch/XHR-ed by the frontend or consumed by other clients
   scope :api do
     get 'currentUser' => 'auth#current_user'
     post 'login/account' => 'auth#login'
