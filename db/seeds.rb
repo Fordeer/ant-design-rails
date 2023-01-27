@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+0.upto(99) do |i|
+  RuleListItem.create!(
+    disabled: i % 6 == 0,
+    href: 'https://github.com/pmq20/ant-design-rails',
+    avatar: [
+      'https://gw.alipayobjects.com/zos/rmsportal/eeHMaZBwmTvLdIwMfBpg.png',
+      'https://gw.alipayobjects.com/zos/rmsportal/udxAbMEhpwthVVcjLXik.png',
+    ][i % 2],
+    name: "TradeCode #{i}",
+    owner: 'Lili Qu',
+    desc: 'This is a description',
+    call_no: (rand * 1000).floor,
+    status: (rand * 10).floor % 4,
+    progress: (rand * 100).ceil
+  )
+end

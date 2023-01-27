@@ -1,0 +1,2 @@
+class RuleListItem < ApplicationRecord
+end

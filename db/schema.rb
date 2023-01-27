@@ -15,15 +15,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_27_013256) do
   enable_extension "plpgsql"
 
   create_table "rule_list_items", force: :cascade do |t|
-    t.boolean "disabled", null: false
-    t.string "href", null: false
-    t.string "avatar", null: false
-    t.string "name", null: false
-    t.string "owner", null: false
-    t.string "desc", null: false
-    t.integer "call_no", null: false
-    t.integer "status", null: false
-    t.integer "progress", null: false
+    t.boolean "disabled"
+    t.string "href"
+    t.string "avatar"
+    t.string "name"
+    t.string "owner"
+    t.string "desc"
+    t.integer "call_no"
+    t.integer "status"
+    t.integer "progress"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
