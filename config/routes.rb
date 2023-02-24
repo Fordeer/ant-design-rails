@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     post 'login/account' => 'auth#login'
     post 'login/outLogin' => 'auth#logout'
     get 'rule' => 'list#rule'
+    post 'basic-form' => 'admin#create_basic_form'
   end
 end

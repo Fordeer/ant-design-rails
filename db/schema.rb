@@ -10,9 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_27_013256) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_24_040208) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "basic_forms", force: :cascade do |t|
+    t.string "title"
+    t.date "start_date"
+    t.date "end_date"
+    t.text "goal"
+    t.text "standard"
+    t.string "client"
+    t.string "invites"
+    t.integer "weight"
+    t.integer "public_type"
+    t.integer "public_users"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "rule_list_items", force: :cascade do |t|
     t.boolean "disabled"

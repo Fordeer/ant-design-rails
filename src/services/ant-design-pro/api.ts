@@ -3,6 +3,18 @@
 import { request } from '@umijs/max';
 
 /** Changes of pmq20/ant-design-rails */
+export async function submitBasicForm(params: any) {
+  return request('/api/basic-form', {
+    method: 'POST',
+    headers: {
+      'X-CSRF-Token': window.document.querySelector("meta[name='csrf-token']").getAttribute('content'),
+      'Content-Type': 'application/json',
+    },
+    data: params,
+  });
+}
+
+/** Changes of pmq20/ant-design-rails */
 export async function getRailsPage(full_path: string, options?: { [key: string]: any }) {
   return request(full_path, {
     method: 'GET',

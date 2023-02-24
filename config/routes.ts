@@ -36,12 +36,17 @@ export default [
     routes: [
       {
         path: '/api/admin',
-        redirect: '/api/admin/sub-page',
+        redirect: '/api/admin/hello-world',
       },
       {
-        path: '/api/admin/sub-page',
-        name: 'sub-page',
+        path: '/api/admin/hello-world',
+        name: 'hello-world',
         component: './Admin',
+      },
+      {
+        path: '/api/admin/basic-form',
+        name: 'basic-form',
+        component: './FormBasicForm',
       },
     ],
   },
