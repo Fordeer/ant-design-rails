@@ -1,5 +1,5 @@
 import Footer from '@/components/Footer';
-import RightContent from '@/components/RightContent';
+import { Question, SelectLang } from '@/components/RightContent';
 import { LinkOutlined } from '@ant-design/icons';
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
 import { SettingDrawer } from '@ant-design/pro-components';
@@ -8,6 +8,8 @@ import { history, Link } from '@umijs/max';
 import defaultSettings from '../config/defaultSettings';
 import { errorConfig } from './requestErrorConfig';
 import { currentUser as queryCurrentUser, getRailsPage } from './services/ant-design-pro/api'; // Changes of pmq20/ant-design-rails
+import React from 'react';
+import { AvatarDropdown, AvatarName } from './components/RightContent/AvatarDropdown';
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/api/user/login'; // Changes of pmq20/ant-design-rails
 
@@ -53,7 +55,14 @@ export async function getInitialState(): Promise<{
 // ProLayout 支持的api https://procomponents.ant.design/components/layout
 export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) => {
   return {
-    rightContentRender: () => <RightContent />,
+    actionsRender: () => [<Question key="doc" />, <SelectLang key="SelectLang" />],
+    avatarProps: {
+      src: initialState?.currentUser?.avatar,
+      title: <AvatarName />,
+      render: (_, avatarChildren) => {
+        return <AvatarDropdown>{avatarChildren}</AvatarDropdown>;
+      },
+    },
     waterMarkProps: {
       // content: initialState?.currentUser?.name, // Changes of pmq20/ant-design-rails
     },
