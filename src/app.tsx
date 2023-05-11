@@ -1,5 +1,5 @@
-import Footer from '@/components/Footer';
-import { Question, SelectLang } from '@/components/RightContent';
+import { Footer } from '@/components';
+import { Question, SelectLang } from '@/components';
 import { LinkOutlined } from '@ant-design/icons';
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
 import { SettingDrawer } from '@ant-design/pro-components';
@@ -7,9 +7,9 @@ import type { RunTimeLayoutConfig } from '@umijs/max';
 import { history, Link } from '@umijs/max';
 import defaultSettings from '../config/defaultSettings';
 import { errorConfig } from './requestErrorConfig';
-import { currentUser as queryCurrentUser, getRailsPage } from './services/ant-design-pro/api'; // Changes of pmq20/ant-design-rails
+import { currentUser as queryCurrentUser, getRailsPage } from '@/services/ant-design-pro/api'; // Changes of pmq20/ant-design-rails
 import React from 'react';
-import { AvatarDropdown, AvatarName } from './components/RightContent/AvatarDropdown';
+import { AvatarDropdown, AvatarName } from '@/components';
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/api/user/login'; // Changes of pmq20/ant-design-rails
 
@@ -128,17 +128,19 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
       return (
         <>
           {children}
-          <SettingDrawer
-            disableUrlParams
-            enableDarkTheme
-            settings={initialState?.settings}
-            onSettingChange={(settings) => {
-              setInitialState((preInitialState) => ({
-                ...preInitialState,
-                settings,
-              }));
-            }}
-          />
+          {isDev && (
+            <SettingDrawer
+              disableUrlParams
+              enableDarkTheme
+              settings={initialState?.settings}
+              onSettingChange={(settings) => {
+                setInitialState((preInitialState) => ({
+                  ...preInitialState,
+                  settings,
+                }));
+              }}
+            />
+          )}
         </>
       );
     },
