@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     }
   end
 
-  def render_page
+  def antd_render
     respond_to do |format|
       format.html { render html: '', layout: true }
       format.json { render json: @antd }

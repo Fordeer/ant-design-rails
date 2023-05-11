@@ -2,10 +2,10 @@
 
 class UserController < ApplicationController
   def index
-    render_page
+    antd_render
   end
 
   def login
-    render_page
+    antd_render
   end
 end

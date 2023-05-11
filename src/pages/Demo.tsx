@@ -1,24 +1,24 @@
-import { HeartTwoTone, SmileTwoTone } from '@ant-design/icons';
+import { SmileTwoTone } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-components';
-import { useModel, useIntl } from '@umijs/max';
+import { useIntl, useModel } from '@umijs/max';
 import { Alert, Card, Typography } from 'antd';
 import React from 'react';
 
-const Admin: React.FC = () => {
+const Demo: React.FC = () => {
   const intl = useIntl();
   const { initialState } = useModel('@@initialState');
   return (
     <PageContainer
       content={intl.formatMessage({
-        id: 'pages.admin.subPage.title',
-        defaultMessage: 'This page can only be viewed by admin',
+        id: 'pages.demo.subPage.title',
+        defaultMessage: 'The simplest page built using Ant Design on Rails',
       })}
     >
       <Card>
         <Alert
           message={intl.formatMessage({
             id: 'pages.welcome.alertMessage',
-            defaultMessage: 'Faster and stronger heavy-duty components have been released.',
+            defaultMessage: 'Received a greeting from Rails with the current server time.',
           })}
           type="success"
           showIcon
@@ -32,15 +32,8 @@ const Admin: React.FC = () => {
           <SmileTwoTone /> {initialState?.antd?.greetings}
         </Typography.Title>
       </Card>
-      <p style={{ textAlign: 'center', marginTop: 24 }}>
-        Want to add more pages? Please refer to{' '}
-        <a href="https://pro.ant.design/docs/block-cn" target="_blank" rel="noopener noreferrer">
-          use block
-        </a>
-        。
-      </p>
     </PageContainer>
   );
 };
 
-export default Admin;
+export default Demo;

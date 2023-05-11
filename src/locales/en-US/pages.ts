@@ -1,6 +1,6 @@
 export default {
   'pages.layouts.userLayout.title':
-    'Pairing world\'s best backend framework with the best frontend framework',
+    "Pairing world's best backend framework with the best frontend framework",
   'pages.login.accountLogin.tab': 'Account Login',
   'pages.login.accountLogin.errorMessage': 'Incorrect username/password(admin/ant.design)',
   'pages.login.failure': 'Login failed, please try again!',
@@ -24,9 +24,9 @@ export default {
   'pages.login.loginWith': 'Login with :',
   'pages.login.registerAccount': 'Register Account',
   'pages.welcome.link': 'Welcome',
-  'pages.welcome.alertMessage': 'Faster and stronger heavy-duty components have been released.',
-  'pages.admin.subPage.title': 'This page can only be viewed by Admin',
-  'pages.admin.subPage.alertMessage':
+  'pages.welcome.alertMessage': 'Received a greeting from Rails with the current server time.',
+  'pages.demo.subPage.title': 'The simplest page built using Ant Design on Rails',
+  'pages.demo.subPage.alertMessage':
     'Umi ui is now released, welcome to use npm run ui to start the experience.',
   'pages.searchTable.createForm.newRule': 'New Rule',
   'pages.searchTable.updateForm.ruleConfig': 'Rule configuration',

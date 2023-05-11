@@ -242,7 +242,7 @@ const TableList: React.FC = () => {
   ];
 
   return (
-    <PageContainer>
+    <PageContainer content="Search tables are used to query data based on various criteria">
       <ProTable<API.RuleListItem, API.PageParams>
         headerTitle={intl.formatMessage({
           id: 'pages.searchTable.title',

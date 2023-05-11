@@ -2,6 +2,6 @@
 
 class WelcomeController < ApplicationController
   def index
-    render_page
+    antd_render
   end
 end

@@ -1,4 +1,3 @@
-import { GithubOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-components';
 import { useModel } from '@umijs/max';
 import { Card, theme } from 'antd';
@@ -23,7 +22,8 @@ const InfoCard: React.FC<{
     <div
       style={{
         backgroundColor: token.colorBgContainer,
-        boxShadow: token.boxShadow,
+        boxShadow:
+          'rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.02) 0px 1px 6px -1px, rgba(0, 0, 0, 0.02) 0px 2px 4px 0px', // Changes of pmq20/ant-design-rails
         borderRadius: '8px',
         fontSize: '14px',
         color: token.colorTextSecondary,
@@ -125,9 +125,11 @@ const Welcome: React.FC = () => {
               marginTop: 16,
               marginBottom: 32,
               width: '65%',
+              minHeight: '50px', // Changes of pmq20/ant-design-rails
             }}
           >
-            Pairing world's best backend framework with the best frontend framework, without wrapping everything in API!
+            Pairing world&apos;s best backend framework with the best frontend framework, without
+            wrapping everything in API!
           </p>
           <div
             style={{

@@ -29,32 +29,30 @@ export default [
     component: './Welcome',
   },
   {
-    path: '/api/admin',
-    name: 'admin',
-    icon: 'crown',
-    access: 'canAdmin',
+    path: '/api/demo',
+    name: 'demo',
+    icon: 'folder',
     routes: [
       {
-        path: '/api/admin',
-        redirect: '/api/admin/hello-world',
+        path: '/api/demo',
+        redirect: '/api/demo/hello-world',
       },
       {
-        path: '/api/admin/hello-world',
+        path: '/api/demo/hello-world',
         name: 'hello-world',
-        component: './Admin',
+        component: './Demo',
       },
       {
-        path: '/api/admin/basic-form',
+        path: '/api/demo/basic-form',
         name: 'basic-form',
         component: './FormBasicForm',
       },
+      {
+        path: '/api/demo/list',
+        name: 'table-list',
+        component: './TableList',
+      },
     ],
-  },
-  {
-    name: 'list.table-list',
-    icon: 'table',
-    path: '/api/list',
-    component: './TableList',
   },
   {
     path: '/',

@@ -25,8 +25,8 @@ export default {
   'pages.login.registerAccount': 'অ্যাকাউন্ট নিবন্ধন করুন',
   'pages.welcome.link': 'স্বাগতম',
   'pages.welcome.alertMessage': 'দ্রুত এবং শক্তিশালী ভারী শুল্ক উপাদান প্রকাশ করা হয়েছে।',
-  'pages.admin.subPage.title': 'এই পৃষ্ঠাটি কেবল অ্যাডমিন দ্বারা দেখা যাবে',
-  'pages.admin.subPage.alertMessage':
+  'pages.demo.subPage.title': 'এই পৃষ্ঠাটি কেবল অ্যাডমিন দ্বারা দেখা যাবে',
+  'pages.demo.subPage.alertMessage':
     'UMI UI এখন প্রকাশিত হয়েছে, অভিজ্ঞতা শুরু করতে npm run ui ব্যবহার করতে স্বাগতম।',
   'pages.searchTable.createForm.newRule': 'নতুন বিধি',
   'pages.searchTable.updateForm.ruleConfig': 'বিধি কনফিগারেশন',
